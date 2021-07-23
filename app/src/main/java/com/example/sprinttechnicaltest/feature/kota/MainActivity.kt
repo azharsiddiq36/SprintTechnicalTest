@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sprinttechnicaltest.databinding.ActivityMainBinding
 import com.example.sprinttechnicaltest.model.ContentKota
@@ -33,12 +34,11 @@ class MainActivity : AppCompatActivity() {
     private fun initrecycler(vmKota: ResponseKota) {
         kotaAdapter = KotaAdapter(this,vmKota)
         binding.recyclerKota.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context,3)
             adapter = kotaAdapter
             kotaAdapter!!.itemClickListener = object : KotaAdapter.Listener {
                 override fun onClick(selected: ContentKota) {
-                    Toast.makeText(context, "Kentang", Toast.LENGTH_SHORT).show()
-                    NavigatorRepository.openDetailKota(context)
+                    Toast.makeText(context, "Anda mengklik kota ${selected.areaName}", Toast.LENGTH_SHORT).show()
                 }
             }
         }

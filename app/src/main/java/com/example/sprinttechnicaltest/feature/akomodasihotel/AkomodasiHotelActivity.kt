@@ -37,8 +37,7 @@ class AkomodasiHotelActivity : AppCompatActivity() {
             adapter = akomodasiAdapter
             akomodasiAdapter!!.itemClickListener = object : AkomodasiAdapter.Listener {
                 override fun onClick(selected: ContentHotel) {
-                    Toast.makeText(context, "Kentang", Toast.LENGTH_SHORT).show()
-                    NavigatorRepository.openDetailKota(context)
+                    Toast.makeText(context, "Anda mengklik ${selected.referenceName}", Toast.LENGTH_SHORT).show()
                 }
             }
         }

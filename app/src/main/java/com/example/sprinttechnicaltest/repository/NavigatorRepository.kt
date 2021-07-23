@@ -6,10 +6,6 @@ import com.example.sprinttechnicaltest.feature.akomodasihotel.AkomodasiHotelActi
 import com.example.sprinttechnicaltest.feature.kota.MainActivity
 
 object NavigatorRepository {
-    fun openDetailKota(context: Context){
-        val intent = Intent(context, MainActivity::class.java)
-        context.startActivity(intent)
-    }
     fun openKota(context: Context){
         val intent = Intent(context, MainActivity::class.java)
         context.startActivity(intent)
