@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.sprinttechnicaltest.R
 import com.example.sprinttechnicaltest.databinding.ListItemAkomodasiBinding
 import com.example.sprinttechnicaltest.model.ContentHotel
 import com.example.sprinttechnicaltest.model.ResponseHotel
+import com.example.sprinttechnicaltest.util.PictureLib
 
 class AkomodasiAdapter(private val context: Context,private val data: ResponseHotel):RecyclerView.Adapter<AkomodasiAdapter.MyViewHolder>() {
     var itemClickListener: Listener? = null
@@ -33,8 +35,11 @@ class AkomodasiAdapter(private val context: Context,private val data: ResponseHo
     class MyViewHolder(val context: Context, view: View, val listener: Listener?):RecyclerView.ViewHolder(view) {
         val binding = ListItemAkomodasiBinding.bind(view)
         fun bind(akomodasiData: ContentHotel){
-            binding.tvMovie.text = akomodasiData.ticketName
-            binding.cvMovie.setOnClickListener {
+            binding.tvTitle.text = akomodasiData.referenceName
+            binding.tvLocation.text = akomodasiData.ticketName
+            binding.tvDescription.text = akomodasiData.description
+            PictureLib.loadPicture(context, akomodasiData.referenceImage,binding.ivHotel)
+            binding.cvHotel.setOnClickListener {
                 listener?.onClick(akomodasiData)
             }
 
