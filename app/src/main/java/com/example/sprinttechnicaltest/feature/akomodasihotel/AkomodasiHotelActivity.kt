@@ -1,16 +1,14 @@
-package com.example.sprinttechnicaltest
+package com.example.sprinttechnicaltest.feature.akomodasihotel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sprinttechnicaltest.adapter.AkomodasiAdapter
 import com.example.sprinttechnicaltest.databinding.ActivityAkomodasiHotelBinding
-import com.example.sprinttechnicaltest.model.akomodasi.Content
-import com.example.sprinttechnicaltest.model.akomodasi.Response
+import com.example.sprinttechnicaltest.model.ContentHotel
+import com.example.sprinttechnicaltest.model.ResponseHotel
 import com.example.sprinttechnicaltest.repository.NavigatorRepository
-import com.example.sprinttechnicaltest.viewmodel.AkomodasiViewModel
 
 class AkomodasiHotelActivity : AppCompatActivity() {
     private lateinit var binding : ActivityAkomodasiHotelBinding
@@ -32,13 +30,13 @@ class AkomodasiHotelActivity : AppCompatActivity() {
         }
     }
 
-    private fun initrecycler(vmKota: Response) {
+    private fun initrecycler(vmKota: ResponseHotel) {
         akomodasiAdapter = AkomodasiAdapter(this,vmKota)
         binding.recyclerHotel.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = akomodasiAdapter
             akomodasiAdapter!!.itemClickListener = object : AkomodasiAdapter.Listener {
-                override fun onClick(selected: Content) {
+                override fun onClick(selected: ContentHotel) {
                     Toast.makeText(context, "Kentang", Toast.LENGTH_SHORT).show()
                     NavigatorRepository.openDetailKota(context)
                 }

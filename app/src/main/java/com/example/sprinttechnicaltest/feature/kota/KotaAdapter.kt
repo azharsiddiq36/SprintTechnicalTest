@@ -1,4 +1,4 @@
-package com.example.sprinttechnicaltest.adapter
+package com.example.sprinttechnicaltest.feature.kota
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,32 +7,32 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sprinttechnicaltest.R
 import com.example.sprinttechnicaltest.databinding.ListItemKotaBinding
-import com.example.sprinttechnicaltest.model.kota.Content
-import com.example.sprinttechnicaltest.model.kota.ResponseKota
+import com.example.sprinttechnicaltest.model.ContentKota
+import com.example.sprinttechnicaltest.model.ResponseKota
 
 class KotaAdapter(private val context: Context, private val data: ResponseKota): RecyclerView.Adapter<KotaAdapter.MyViewHolder>() {
-    var itemClickListener:Listener? = null
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KotaAdapter.MyViewHolder {
+    var itemClickListener: Listener? = null
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item_kota, parent, false)
         return MyViewHolder(context, itemView, itemClickListener)
     }
 
-    override fun onBindViewHolder(holder: KotaAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val kotaData = getItem(position)
         holder.bind(kotaData)
 
 
     }
-    private fun getItem(n:Int):Content{
+    private fun getItem(n:Int): ContentKota {
         return data.data.content[n]
     }
 
     override fun getItemCount(): Int {
         return data.data.content.size
     }
-    class MyViewHolder(val context: Context, view: View, val listener:Listener?): RecyclerView.ViewHolder(view) {
+    class MyViewHolder(val context: Context, view: View, val listener: Listener?): RecyclerView.ViewHolder(view) {
         val binding = ListItemKotaBinding.bind(view)
-        fun bind(kotaData: Content){
+        fun bind(kotaData: ContentKota){
             binding.tvMovie.text = kotaData.areaName
             binding.cvMovie.setOnClickListener {
                 listener?.onClick(kotaData)
@@ -41,7 +41,7 @@ class KotaAdapter(private val context: Context, private val data: ResponseKota):
         }
     }
     interface Listener{
-        fun onClick(selected:Content)
+        fun onClick(selected: ContentKota)
     }
 
 }

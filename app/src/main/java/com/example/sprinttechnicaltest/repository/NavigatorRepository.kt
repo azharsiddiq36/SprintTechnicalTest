@@ -2,9 +2,8 @@ package com.example.sprinttechnicaltest.repository
 
 import android.content.Context
 import android.content.Intent
-import com.example.rdiandroiddevelopertest.enum.Constant
-import com.example.sprinttechnicaltest.AkomodasiHotelActivity
-import com.example.sprinttechnicaltest.MainActivity
+import com.example.sprinttechnicaltest.feature.akomodasihotel.AkomodasiHotelActivity
+import com.example.sprinttechnicaltest.feature.kota.MainActivity
 
 object NavigatorRepository {
     fun openDetailKota(context: Context){

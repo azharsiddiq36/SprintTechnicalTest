@@ -5,7 +5,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenuActivity">
+    tools:context=".feature.mainmenu.MainMenuActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

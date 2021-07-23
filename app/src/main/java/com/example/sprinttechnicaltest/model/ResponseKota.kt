@@ -1,4 +1,4 @@
-package com.example.sprinttechnicaltest.model.kota
+package com.example.sprinttechnicaltest.model
 
 class ResponseKota(val status: Boolean,
                    val data: DataKota,

@@ -1,8 +1,8 @@
-package com.example.sprinttechnicaltest
+package com.example.sprinttechnicaltest.feature.mainmenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.sprinttechnicaltest.databinding.ActivityMainBinding
+import com.example.sprinttechnicaltest.R
 import com.example.sprinttechnicaltest.databinding.ActivityMainMenuBinding
 import com.example.sprinttechnicaltest.repository.NavigatorRepository
 
