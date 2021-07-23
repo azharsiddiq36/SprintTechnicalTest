@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             kotaAdapter!!.itemClickListener = object : KotaAdapter.Listener {
                 override fun onClick(selected: Content) {
                     Toast.makeText(context, "Kentang", Toast.LENGTH_SHORT).show()
-                    NavigatorRepository.openDetailKota(context,selected.countryId)
+                    NavigatorRepository.openDetailKota(context)
                 }
             }
         }

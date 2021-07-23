@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sprinttechnicaltest.R
+import com.example.sprinttechnicaltest.databinding.ListItemAkomodasiBinding
 import com.example.sprinttechnicaltest.databinding.ListItemKotaBinding
 import com.example.sprinttechnicaltest.model.akomodasi.Content
 import com.example.sprinttechnicaltest.model.akomodasi.Response
@@ -31,7 +32,7 @@ class AkomodasiAdapter(private val context: Context,private val data: Response):
         return data.data.content.size
     }
     class MyViewHolder(val context: Context, view: View, val listener:Listener?):RecyclerView.ViewHolder(view) {
-        val binding = ListItemKotaBinding.bind(view)
+        val binding = ListItemAkomodasiBinding.bind(view)
         fun bind(akomodasiData: Content){
             binding.tvMovie.text = akomodasiData.ticketName
             binding.cvMovie.setOnClickListener {
